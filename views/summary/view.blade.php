@@ -35,12 +35,12 @@
 						@switch($viewSettings->display['card_line_2'])
 							@case(1)<h6 class="card-subtitle text-muted">{{ $order->phone }} / {{ $order->time }} / {{ $order->value }}</h6>@break
 							@case(2)<h6 class="card-subtitle text-muted">{{ $order->time }} / {{ $order->phone }} / {{ $order->value }}</h6>@break
-                            @case(3)<h6 class="card-subtitle text-muted">{{ $order->phone }} / {{ $order->time }} / {{ $order->value }} / {{ $order->payment_code }}</h6>@break
-							@case(4)<h6 class="card-subtitle text-muted">{{ $order->time }} / {{ $order->phone }} / {{ $order->value }} / {{ $order->payment_code }}</h6>@break
+                            @case(3)<h6 class="card-subtitle text-muted">{{ $order->phone }} / {{ $order->time }} / {{ $order->value }} / @if($order->payment_code=='UNPAID')<i class="fa fa-triangle-exclamation" style="color:red"></i></i>@endif {{ $order->payment_code }}</h6>@break
+							@case(4)<h6 class="card-subtitle text-muted">{{ $order->time }} / {{ $order->phone }} / {{ $order->value }} / @if($order->payment_code=='UNPAID')<i class="fa fa-triangle-exclamation" style="color:red"></i></i>@endif {{ $order->payment_code }}</h6>@break
                             @case(5)<h6 class="card-subtitle text-muted"> {{ $order->phone }} / {{ $order->date }} {{ $order->time }} / {{ $order->value }}</h6>@break
 							@case(6)<h6 class="card-subtitle text-muted"> {{ $order->date }} {{ $order->time }}  / {{ $order->phone }} / {{ $order->value }}</h6>@break
-                            @case(7)<h6 class="card-subtitle text-muted"> {{ $order->phone }} /  {{ $order->date }} {{ $order->time }}  / {{ $order->value }} / {{ $order->payment_code }}</h6>@break
-							@case(8)<h6 class="card-subtitle text-muted"> {{ $order->date }} {{ $order->time }}  / {{ $order->phone }} / {{ $order->value }} / {{ $order->payment_code }}</h6>@break
+                            @case(7)<h6 class="card-subtitle text-muted"> {{ $order->phone }} /  {{ $order->date }} {{ $order->time }}  / {{ $order->value }} / @if($order->payment_code=='UNPAID')<i class="fa fa-triangle-exclamation" style="color:red"></i></i>@endif {{ $order->payment_code }}</h6>@break
+							@case(8)<h6 class="card-subtitle text-muted"> {{ $order->date }} {{ $order->time }}  / {{ $order->phone }} / {{ $order->value }} / @if($order->payment_code=='UNPAID')<i class="fa fa-triangle-exclamation" style="color:red"></i></i>@endif {{ $order->payment_code }}</h6>@break
 
 						@endswitch
 
